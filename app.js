@@ -10,7 +10,7 @@ async function checkWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   var data = await response.json();
 
-  console.log(data);
+  // console.log(data);
 
   // Show data from API to web page
 
@@ -30,6 +30,10 @@ async function checkWeather(city) {
   } else if (data.weather[0].main == 'Mist') {
     weatherIcon.src = 'images/mist.png';
   }
+
+  // Unhide weather infogram
+
+  document.querySelector('.weather').style.display = 'block';
 }
 
 searchBtn.addEventListener('click', () => {
